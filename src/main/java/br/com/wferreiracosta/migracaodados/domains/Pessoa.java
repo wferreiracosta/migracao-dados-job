@@ -1,6 +1,7 @@
 package br.com.wferreiracosta.migracaodados.domains;
 
 import lombok.*;
+import org.apache.logging.log4j.util.Strings;
 
 import java.util.Date;
 
@@ -16,5 +17,11 @@ public class Pessoa {
     private String email;
     private Date dataNascimento;
     private int idade;
+
+    public Boolean isValida(){
+        return !Strings.isBlank(nome) &&
+                !Strings.isBlank(email) &&
+                (dataNascimento != null);
+    }
 
 }

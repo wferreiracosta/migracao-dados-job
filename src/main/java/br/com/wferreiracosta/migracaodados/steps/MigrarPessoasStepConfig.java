@@ -4,7 +4,8 @@ import br.com.wferreiracosta.migracaodados.domains.Pessoa;
 import org.springframework.batch.core.Step;
 import org.springframework.batch.core.configuration.annotation.StepBuilderFactory;
 import org.springframework.batch.item.ItemReader;
-import org.springframework.batch.item.ItemWriter;
+import org.springframework.batch.item.file.FlatFileItemWriter;
+import org.springframework.batch.item.support.ClassifierCompositeItemWriter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -18,13 +19,15 @@ public class MigrarPessoasStepConfig {
     @Bean
     public Step migrarPessoasStep(
             ItemReader<Pessoa> arquivoPessoaReader,
-            ItemWriter<Pessoa> bancoPessoaWriter
+            ClassifierCompositeItemWriter<Pessoa> pessoaClassifierWriter,
+            FlatFileItemWriter<Pessoa> arquivoPessoasInvalidasWriter
     ){
         return stepBuilderFactory
                 .get("migrarPessoasStep")
                 .<Pessoa, Pessoa>chunk(1)
                 .reader(arquivoPessoaReader)
-                .writer(bancoPessoaWriter)
+                .writer(pessoaClassifierWriter)
+                .stream(arquivoPessoasInvalidasWriter)
                 .build();
     }
 

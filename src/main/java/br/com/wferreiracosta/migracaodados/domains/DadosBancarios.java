@@ -15,5 +15,6 @@ public class DadosBancarios {
     private int pessoaId;
     private int agencia;
     private int conta;
+    private int banco;
 
 }
