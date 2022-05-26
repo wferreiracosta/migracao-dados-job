@@ -2,13 +2,16 @@ package br.com.wferreiracosta.migracaodados.job;
 
 import org.springframework.batch.core.Job;
 import org.springframework.batch.core.Step;
+import org.springframework.batch.core.configuration.annotation.EnableBatchProcessing;
 import org.springframework.batch.core.configuration.annotation.JobBuilderFactory;
 import org.springframework.batch.core.launch.support.RunIdIncrementer;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
+@EnableBatchProcessing
 public class MigracaoDadosJobConfig {
 
     @Autowired
@@ -16,8 +19,8 @@ public class MigracaoDadosJobConfig {
 
     @Bean
     public Job migracaoDadosJob(
-            Step migrarPessoasStep,
-            Step migrarDadosBancariosStep
+            @Qualifier("migrarPessoasStep") Step migrarPessoasStep,
+            @Qualifier("migrarDadosBancariosStep") Step migrarDadosBancariosStep
     ) {
         return jobBuilderFactory
                 .get("migracaoDadosJob")
