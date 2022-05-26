@@ -1,6 +1,6 @@
 package br.com.wferreiracosta.migracaodados.utils.mappers;
 
-import br.com.wferreiracosta.migracaodados.domain.Pessoa;
+import br.com.wferreiracosta.migracaodados.domains.Pessoa;
 import lombok.NoArgsConstructor;
 import org.springframework.batch.item.file.transform.FieldSet;
 

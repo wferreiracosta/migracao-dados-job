@@ -1,4 +1,4 @@
-package br.com.wferreiracosta.migracaodados.domain;
+package br.com.wferreiracosta.migracaodados.domains;
 
 import lombok.*;
 

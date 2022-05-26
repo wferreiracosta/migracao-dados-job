@@ -1,6 +1,6 @@
-package br.com.wferreiracosta.migracaodados.step;
+package br.com.wferreiracosta.migracaodados.steps;
 
-import br.com.wferreiracosta.migracaodados.domain.DadosBancarios;
+import br.com.wferreiracosta.migracaodados.domains.DadosBancarios;
 import org.springframework.batch.core.Step;
 import org.springframework.batch.core.configuration.annotation.StepBuilderFactory;
 import org.springframework.batch.item.ItemReader;

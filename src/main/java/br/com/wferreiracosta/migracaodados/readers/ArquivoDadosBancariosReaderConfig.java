@@ -1,6 +1,6 @@
-package br.com.wferreiracosta.migracaodados.reader;
+package br.com.wferreiracosta.migracaodados.readers;
 
-import br.com.wferreiracosta.migracaodados.domain.DadosBancarios;
+import br.com.wferreiracosta.migracaodados.domains.DadosBancarios;
 import org.springframework.batch.item.file.FlatFileItemReader;
 import org.springframework.batch.item.file.builder.FlatFileItemReaderBuilder;
 import org.springframework.context.annotation.Bean;

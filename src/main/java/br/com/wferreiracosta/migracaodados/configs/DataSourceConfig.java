@@ -1,4 +1,4 @@
-package br.com.wferreiracosta.migracaodados.config;
+package br.com.wferreiracosta.migracaodados.configs;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.boot.jdbc.DataSourceBuilder;

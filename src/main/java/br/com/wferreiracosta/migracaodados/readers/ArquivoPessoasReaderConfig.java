@@ -1,6 +1,6 @@
-package br.com.wferreiracosta.migracaodados.reader;
+package br.com.wferreiracosta.migracaodados.readers;
 
-import br.com.wferreiracosta.migracaodados.domain.Pessoa;
+import br.com.wferreiracosta.migracaodados.domains.Pessoa;
 import org.springframework.batch.item.file.FlatFileItemReader;
 import org.springframework.batch.item.file.builder.FlatFileItemReaderBuilder;
 import org.springframework.batch.item.file.mapping.FieldSetMapper;

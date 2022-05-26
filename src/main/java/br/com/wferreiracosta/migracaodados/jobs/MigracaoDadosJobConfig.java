@@ -1,4 +1,4 @@
-package br.com.wferreiracosta.migracaodados.job;
+package br.com.wferreiracosta.migracaodados.jobs;
 
 import org.springframework.batch.core.Job;
 import org.springframework.batch.core.Step;
